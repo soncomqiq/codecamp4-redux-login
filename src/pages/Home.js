@@ -3,9 +3,9 @@ import { Row, Col } from 'antd'
 import PostList from '../components/post/PostList'
 import CreatePost from '../components/post/CreatePost'
 import Axios from '../config/api.service'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
-class Home extends React.Component {
+export default class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,8 +17,8 @@ class Home extends React.Component {
   componentDidMount() {
     this.setState({
       owner: {
-        name: this.props.user.name,
-        profilePic: this.props.user.profilePic
+        // name: this.props.user.name,
+        // profilePic: this.props.user.profilePic
       }
     })
     Axios.get('/feed').then((response) => {
@@ -47,10 +47,10 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     user: state.user
+//   }
+// }
 
-export default connect(mapStateToProps, null)(Home)
+// export default connect(mapStateToProps, null)(Home)
