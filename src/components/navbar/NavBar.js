@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Button, Avatar, Dropdown, Menu } from 'antd'
 import { Link, withRouter } from 'react-router-dom';
-// import { connect } from 'react-redux'
-// import { logout } from '../../redux/actions/actions'
 import logo from '../../images/logo.png'
 
 class NavBar extends Component {
@@ -44,13 +42,13 @@ class NavBar extends Component {
           <Row type="flex" justify="end">
             <Col span={4} type="flex" align="end">
               <Avatar
-              // src={this.props.user.profilePic}
+
               />
             </Col>
             <Dropdown overlay={menu}>
               <Col span={6} type="flex" align="start">
                 <Link to="/my-profile">
-                  {/* <Button type="link">{this.props.user.name}</Button> */}
+                  <Button type="link">{"Name"}</Button>
                 </Link>
               </Col>
             </Dropdown>
@@ -60,17 +58,5 @@ class NavBar extends Component {
     )
   }
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     user: state.user
-//   }
-// }
-
-// const mapDispatchToProps = {
-//   logout: logout
-// }
-
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar))
 
 export default NavBar

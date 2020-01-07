@@ -4,13 +4,11 @@ import { Switch } from 'react-router-dom'
 import { Layout } from 'antd';
 import NavBar from './components/navbar/NavBar'
 import PrivateRoute from './components/routes/PrivateRoute';
-// import { connect } from 'react-redux'
 
 const { Header, Content } = Layout;
 
 export default class App extends React.Component {
   render() {
-    // const role = this.props.user.role 
     const role = 'guest'
     console.log(role)
     return (
@@ -29,11 +27,3 @@ export default class App extends React.Component {
     )
   }
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     user: state.user
-//   }
-// }
-
-// export default connect(mapStateToProps, null)(App)

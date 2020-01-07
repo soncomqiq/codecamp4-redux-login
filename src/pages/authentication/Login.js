@@ -1,8 +1,6 @@
 import React from 'react'
 import { Row, Col, Form, Icon, Input, Button } from 'antd';
 import logo from '../../images/logo.png'
-// import { connect } from 'react-redux'
-// import { login } from '../../redux/actions/actions'
 import jwtDecode from 'jwt-decode'
 import Axios from '../../config/api.service'
 import { Link } from 'react-router-dom';
@@ -18,7 +16,6 @@ class Login extends React.Component {
         })
           .then(result => {
             const user = jwtDecode(result.data.token)
-            // this.props.login(user, result.data.token)
             this.props.history.push('/')
             window.location.reload(true);
           })
@@ -87,10 +84,5 @@ class Login extends React.Component {
   }
 }
 
-// const mapDispatchToProps = {
-//   login: login
-// }
-
 const LoginForm = Form.create({ name: 'login' })(Login);
-// export default connect(null, mapDispatchToProps)(LoginForm)
 export default LoginForm
